@@ -4,12 +4,15 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Stack and Queue Problems");
-            LinkedListStack stack = new LinkedListStack();
-            stack.Push(70);
-            stack.Push(30);
-            stack.Push(56);
-            stack.Display();
+            LinkedListStack linkedListStack = new LinkedListStack();
+
+            linkedListStack.push(70);
+            linkedListStack.push(30);
+            linkedListStack.push(56);
+            linkedListStack.Display();
+            linkedListStack.Peek();
+            linkedListStack.Pop();
+            linkedListStack.IsEmpty();
         }
     }
 }
