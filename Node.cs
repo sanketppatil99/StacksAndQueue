@@ -15,4 +15,4 @@ namespace StackAndQueue
             this.data = data;
         }
     }
-}
+}//
