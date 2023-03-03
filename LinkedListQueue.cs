@@ -14,9 +14,7 @@ namespace StackAndQueue
         {
             Node node = new Node(data);
             if (head == null)
-            {
                 head = node;
-            }
             else
             {
                 Node temp = head;
@@ -26,21 +24,39 @@ namespace StackAndQueue
                 }
                 temp.next = node;
 
+
             }
-            Console.WriteLine("{0} inserted into Queue", node.data);
+            Console.WriteLine("{0} inserted into queue ", node.data);
+
         }
+
         internal void Display()
         {
+            Console.WriteLine("\nItems in Queue");
             Node temp = this.head;
             if (temp == null)
             {
                 Console.WriteLine("Queue is empty");
                 return;
+
             }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.Write(temp.data + " ");
                 temp = temp.next;
+            }
+        }
+        internal void Dequeu()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Queue is empty");
+            }
+            else
+            {
+                Console.WriteLine("\nThe Deque element is : " + head.data);
+                head = head.next;
+
             }
         }
     }
