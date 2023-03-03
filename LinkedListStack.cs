@@ -9,41 +9,67 @@ namespace StackAndQueue
     public class LinkedListStack
     {
         private Node top;
+        private Node next;
+
         public LinkedListStack()
         {
             this.top = null;
+
         }
 
-        public void Push(int data)
+        internal void push(int value)
         {
-            Node top;
-            Node newNode = new Node(data);
+            Node node = new Node(value);
             if (this.top == null)
             {
-                newNode.next = null;
+                node.next = null;
+
+
             }
             else
             {
-                newNode.next = this.top;
+                node.next = this.top;
             }
-            this.top = newNode;
-            Console.WriteLine("{0} pushed to stack", data);
+            this.top = node;
+            Console.WriteLine("{0} pushed to stack", value);
+
         }
 
-        public void Display()
+        internal void Display()
         {
-            Console.WriteLine("Item in the stack");
             Node temp = this.top;
-            if (temp == null)
-            {
-                Console.WriteLine("Linked list is empty");
-                return;
-            }
             while (temp != null)
             {
-
                 Console.WriteLine(temp.data + " ");
                 temp = temp.next;
+            }
+        }
+        internal void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            Console.WriteLine("{0} is in the top of the stack", this.top.data);
+        }
+        internal void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty,Deletion is not possible");
+                return;
+            }
+            Console.WriteLine("Valued poped is {0}", this.top.data);
+            this.top = this.next;
+        }
+
+        internal void IsEmpty()
+        {
+            while (this.top != null)
+            {
+                Peek();
+                Pop();
             }
         }
     }
